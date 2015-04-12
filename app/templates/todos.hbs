@@ -2,19 +2,7 @@
     value=newTitle action="createTodo"}}
 
 <section id="main">
-    <ul id="todo-list">
-        {{#each item in model itemController="todo"}}
-        <li {{bind-attr class="item.isCompleted:completed item.isEditing:editing"}}>
-            {{#if item.isEditing}}
-                {{input type="text" class="edit" value=item.title focus-out="acceptChanges"
-                insert-newline="acceptChanges"}}
-            {{else}}
-                {{input type="checkbox" checked=item.isCompleted class="toggle"}}
-                <label {{action "editTodo" on="doubleClick"}}>{{item.title}}</label><button class="destroy"></button>
-            {{/if}}
-        </li>
-        {{/each}}
-    </ul>
+    {{outlet}}
  
     <input type="checkbox" id="toggle-all">
 </section>
@@ -25,13 +13,13 @@
     </span>
     <ul id="filters">
         <li>
-            <a href="all" class="selected">All</a>
+            {{#link-to "todos.index" activeClass="selected"}}All{{/link-to}}
         </li>
         <li>
-            <a href="active">Active</a>
+            {{#link-to "todos.active" activeClass="selected"}}Active{{/link-to}}
         </li>
         <li>
-            <a href="completed">Completed</a>
+            {{#link-to "todos.complete" activeClass="selected"}}Complete{{/link-to}}
         </li>
     </ul>
  
