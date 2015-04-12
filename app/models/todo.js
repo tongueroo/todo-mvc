@@ -7,7 +7,7 @@ export default DS.Model.extend({
     FIXTURES: [
         {
             id: 1,
-            title: "Complete Ember.js Tutorial",
+            title: "Complete Ember.js Tutorial 2",
             isCompleted: false
         },
         {

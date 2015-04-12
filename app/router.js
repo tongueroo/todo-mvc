@@ -9,6 +9,8 @@ Router.map(function() {
     this.resource('todos', { path: '/' });
 });
 
-export default Router.map(function() {
-  this.route('todos');
-});
+export default Router.map(function() {});
+
+// export default Router.map(function() {
+//   this.route('todos');
+// });
