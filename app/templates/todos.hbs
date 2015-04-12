@@ -8,8 +8,10 @@
             {{#if todo.isEditing}}
                 <input class="edit">
             {{else}}
+            bb
                 {{input type="checkbox" checked=todo.isCompleted class="toggle"}}
                 <label {{action "editTodo" on="doubleClick"}}>{{todo.title}}</label><button class="destroy"></button>
+                cc
             {{/if}}
         </li>
         {{/each}}
