@@ -5,8 +5,6 @@ export default Ember.Controller.extend({
     editTodo: function() {
       this.set('model.isEditing', true);
     }
-  },
-
-  title: 'test'
+  }
 
 });
