@@ -3,13 +3,13 @@
 
 <section id="main">
     <ul id="todo-list">
-        {{#each todo in model itemController="todo-item"}}
-        <li {{bind-attr class="todo.isCompleted:completed"}}>
-            {{#if todo.isEditing}}
+        {{#each item in model itemController="todo"}}
+        <li {{bind-attr class="item.isCompleted:completed"}}>
+            {{#if item.isEditing}}
                 <input class="edit">
             {{else}}
-                {{input type="checkbox" checked=todo.isCompleted class="toggle"}}
-                <label {{action "editTodo" on="doubleClick"}}>{{todo.title}}</label><button class="destroy"></button>
+                {{input type="checkbox" checked=item.isCompleted class="toggle"}}
+                <label {{action "editTodo" on="doubleClick"}}>{{item.title}}</label><button class="destroy"></button>
             {{/if}}
         </li>
         {{/each}}
